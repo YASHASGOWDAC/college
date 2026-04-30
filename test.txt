@@ -224,3 +224,16 @@ Secret= (copied token)
 ID= any name ex: slack-token
 Channel= (channel name from slack website)
 ok
+.................................................................
+.
+.................................................................
+FROM openjdk:17
+WORKDIR /app
+COPY . .
+RUN javac App.java
+CMD ["java", "App"]
+.................................................
+.
+............................................................
+FROM nginx:latest
+COPY . /usr/share/nginx/html
